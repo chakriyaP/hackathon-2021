@@ -22,17 +22,14 @@ app.post('/webhook', (req, res) => {
 })
 
 app.post('/fulfill', (req, res) => {
+    console.log("new ");
     const agent = new WebhookClient({
       request: req,
       response: res
     });
   
     //Function Location
-    function informbilling(agent) {
-        // let {set} = req.body.queryResult.parameters
-        agent.add(`คุณสั่งชุด`);
-    }
-  
+    
     // Run the proper function handler based on the matched Dialogflow intent name
     let intentMap = new Map();
     intentMap.set('framchise package - custom - yes', informbilling);  // "Location" is once Intent Name of Dialogflow Agent
@@ -40,6 +37,12 @@ app.post('/fulfill', (req, res) => {
   });
 
 app.listen(port)
+
+function informbilling(agent) {
+    // let {set} = req.body.queryResult.parameters
+    agent.add(`คุณสั่งชุด`);
+}
+
 
 function reply(reply_token) {
     let headers = {
