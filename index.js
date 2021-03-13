@@ -5,7 +5,7 @@
 // app.get('/', (req, res) => res.send('Hello World'))
 // app.post('/webhook', (req, res) => res.sendStatus(200))
 
-    
+
 
 
 // app.listen(PORT, () => {
@@ -17,15 +17,22 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8080
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
-    let reply_token = req.body.events[0].replyToken
+    let reply_token
+    try {
+        reply_token = req.body.events[0].replyToken
+    } catch (err) {
+        res.sendStatus(403)
+    }
     reply(reply_token)
     res.sendStatus(200)
 })
+
 app.listen(port)
+
 function reply(reply_token) {
     let headers = {
         'Content-Type': 'application/json',
