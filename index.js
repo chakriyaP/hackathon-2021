@@ -28,178 +28,178 @@ function reply(reply_token) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [{
-            "type": "flex",
-            "altText": "Flex Message",
-            "contents": {
-              "type": "carousel",
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "url": "https://firebasestorage.googleapis.com/v0/b/hackathon-5c71e.appspot.com/o/product1.jpg?alt=media&token=62926088-754b-44f9-bb91-89303c2380bd&fbclid=IwAR2UeRri4ThGSJ_UPeCv-9J-xnqQPtrsMUzG4E4Q0DqSur8demg-AYp3tPs"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Arm Chair, White",
+              "wrap": true,
+              "weight": "bold",
+              "size": "xl"
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
               "contents": [
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "url": "https://drive.google.com/drive/u/0/folders/1QEmboQWl0ZL886vd2MvYeTarD03Zybxk"
-                  },
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "Arm Chair, White",
-                        "wrap": true,
-                        "weight": "bold",
-                        "size": "xl"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "$49",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "xl"
-                          },
-                          {
-                            "type": "text",
-                            "text": ".99",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "sm"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "style": "primary",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to Cart",
-                          "uri": "https://linecorp.com"
-                        }
-                      },
-                      {
-                        "type": "button",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to wishlist",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
+                  "type": "text",
+                  "text": "$49",
+                  "wrap": true,
+                  "weight": "bold",
+                  "size": "xl"
                 },
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png"
-                  },
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "Metal Desk Lamp",
-                        "wrap": true,
-                        "weight": "bold",
-                        "size": "xl"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "$11",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "xl"
-                          },
-                          {
-                            "type": "text",
-                            "text": ".99",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "sm"
-                          }
-                        ]
-                      },
-                      {
-                        "type": "text",
-                        "text": "Temporarily out of stock",
-                        "wrap": true,
-                        "size": "xxs",
-                        "margin": "md",
-                        "color": "#ff5551"
-                      }
-                    ]
-                  },
-                  "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "style": "primary",
-                        "color": "#aaaaaa",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to Cart",
-                          "uri": "https://linecorp.com"
-                        }
-                      },
-                      {
-                        "type": "button",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to wish list",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "bubble",
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "gravity": "center",
-                        "action": {
-                          "type": "uri",
-                          "label": "See more",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
+                  "type": "text",
+                  "text": ".99",
+                  "wrap": true,
+                  "weight": "bold",
+                  "size": "sm"
                 }
               ]
             }
-          }]
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "style": "primary",
+              "action": {
+                "type": "uri",
+                "label": "Add to Cart",
+                "uri": "https://linecorp.com"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Add to wishlist",
+                "uri": "https://linecorp.com"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Metal Desk Lamp",
+              "wrap": true,
+              "weight": "bold",
+              "size": "xl"
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "$11",
+                  "wrap": true,
+                  "weight": "bold",
+                  "size": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": ".99",
+                  "wrap": true,
+                  "weight": "bold",
+                  "size": "sm"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Temporarily out of stock",
+              "wrap": true,
+              "size": "xxs",
+              "margin": "md",
+              "color": "#ff5551"
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "style": "primary",
+              "color": "#aaaaaa",
+              "action": {
+                "type": "uri",
+                "label": "Add to Cart",
+                "uri": "https://linecorp.com"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Add to wish list",
+                "uri": "https://linecorp.com"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "gravity": "center",
+              "action": {
+                "type": "uri",
+                "label": "See more",
+                "uri": "https://linecorp.com"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}]
     })
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
