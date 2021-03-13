@@ -290,7 +290,7 @@ function reply(reply_token) {
 const postToDialogflow = req => {
   req.headers.host = "bots.dialogflow.com";
   return request.post({
-    uri: "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/362d4e3b-583c-4eee-a1f2-36ea28a4f312",
+    uri: "https://dialogflow.cloud.google.com/v1/integrations/line/webhook",
     headers: req.headers,
     body: JSON.stringify(req.body)
   });
