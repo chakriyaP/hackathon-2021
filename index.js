@@ -15,7 +15,7 @@ app.post('/webhook', (req, res) => {
           reply(reply_token);
         }
       }
-      return res.status(200).send(req.method);
+    return res.status(200).send(req.method);
 })
 
 app.listen(port)
@@ -290,7 +290,7 @@ function reply(reply_token) {
 const postToDialogflow = req => {
   req.headers.host = "bots.dialogflow.com";
   return request.post({
-    uri: "https://dialogflow.cloud.google.com/v1/integrations/line/webhook",
+    uri: "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/362d4e3b-583c-4eee-a1f2-36ea28a4f312",
     headers: req.headers,
     body: JSON.stringify(req.body)
   });
