@@ -1,16 +1,30 @@
+// const express = require('express')
+// const app = express()
+// const PORT = process.env.PORT || 8080
+
+// app.get('/', (req, res) => res.send('Hello World'))
+// app.post('/webhook', (req, res) => res.sendStatus(200))
+
+
+
+
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port : ${PORT}`)
+// })
+
+// module.exports = app
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
-    let reply_token
     try {
-        reply_token = req.body.events[0].replyToken
+        let reply_token = req.body.events[0].replyToken
     } catch (err) {
-        res.sendStatus(403)
+        res.status(403)
     }
     reply(reply_token)
     res.sendStatus(200)
@@ -26,71 +40,151 @@ function reply(reply_token) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [{
-            type: 'text',
-            text: 'สวัสดีค่าาา'
-        },
-        {
-            "type": "template",
-            "altText": "this is a carousel template",
-            "template": {
-              "type": "carousel",
-              "imageSize": "cover",
-              "imageAspectRatio": "rectangle",
-              "columns": [
-                {
-                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
-                  "title": "Set 1",
-                  "text": "19,900 บาท",
-                  "actions": [
-                    {
-                      "type": "uri",
-                      "label": "สั่งซื้อสินค้า",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    },
-                    {
-                      "type": "uri",
-                      "label": "รายละเอียดเพิ่มเติม",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    }
-                  ],
-                  "imageBackgroundColor": "#FFFFFF"
-                },
-                {
-                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
-                  "title": "Set 2",
-                  "text": "39,900 บาท",
-                  "actions": [
-                    {
-                      "type": "uri",
-                      "label": "สั่งซื้อสินค้า",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    },
-                    {
-                      "type": "uri",
-                      "label": "รายละเอียดเพิ่มเติม",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    }
-                  ],
-                  "imageBackgroundColor": "#FFFFFF"
-                },
-                {
-                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
-                  "title": "Set 3",
-                  "text": "159,900 บาท",
-                  "actions": [
-                    {
-                      "type": "uri",
-                      "label": "สั่งซื้อสินค้า",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    },
-                    {
-                      "type": "uri",
-                      "label": "รายละเอียดเพิ่มเติม",
-                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
-                    }
-                  ]
+            "type": "flex",
+            "altText": "Flex Message",
+            "contents": {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "action": {
+                  "type": "uri",
+                  "uri": "http://linecorp.com/"
                 }
-              ]
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Brown Cafe",
+                    "weight": "bold",
+                    "size": "xl"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "margin": "md",
+                    "contents": [
+                      {
+                        "type": "icon",
+                        "size": "sm",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                      },
+                      {
+                        "type": "icon",
+                        "size": "sm",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                      },
+                      {
+                        "type": "icon",
+                        "size": "sm",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                      },
+                      {
+                        "type": "icon",
+                        "size": "sm",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                      },
+                      {
+                        "type": "icon",
+                        "size": "sm",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                      },
+                      {
+                        "type": "text",
+                        "text": "4.0",
+                        "size": "sm",
+                        "color": "#999999",
+                        "margin": "md"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "lg",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "spacing": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Place",
+                            "color": "#aaaaaa",
+                            "size": "sm"
+                          },
+                          {
+                            "type": "text",
+                            "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
+                            "wrap": true,
+                            "color": "#666666",
+                            "size": "sm"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "spacing": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Time",
+                            "color": "#aaaaaa",
+                            "size": "sm"
+                          },
+                          {
+                            "type": "text",
+                            "text": "10:00 - 23:00",
+                            "wrap": true,
+                            "color": "#666666",
+                            "size": "sm"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "uri",
+                      "label": "CALL",
+                      "uri": "https://linecorp.com"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "uri",
+                      "label": "WEBSITE",
+                      "uri": "https://linecorp.com"
+                    }
+                  },
+                  {
+                    "type": "spacer",
+                    "size": "sm"
+                  }
+                ]
+              }
             }
           }]
     })
