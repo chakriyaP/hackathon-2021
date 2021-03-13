@@ -21,7 +21,7 @@ app.post('/webhook', (req, res) => {
     return res.status(200).send(req.method);
 })
 
-app.post('/fulfillment', (req, res) => {
+app.post('/fulfill', (req, res) => {
     const agent = new WebhookClient({
       request: req,
       response: res
