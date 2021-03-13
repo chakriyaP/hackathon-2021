@@ -24,10 +24,6 @@ app.post('/webhook', (req, res) => {
 })
 
 app.post('/fulfillment', (req, res) => {
-    console.log('POST: /');
-    console.log('Body: ',req.body);
-  
-    //Create an instance
     const agent = new WebhookClient({
       request: req,
       response: res
