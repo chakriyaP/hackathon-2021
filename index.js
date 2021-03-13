@@ -33,17 +33,10 @@ app.post('/fulfillment', (req, res) => {
       response: res
     });
   
-    //Test get value of WebhookClient
-    console.log('agentVersion: ' + agent.agentVersion);
-    console.log('intent: ' + agent.intent);
-    console.log('locale: ' + agent.locale);
-    console.log('query: ', agent.query);
-    console.log('session: ', agent.session);
-  
     //Function Location
     function informbilling(agent) {
-        let {set} = req.body.queryResult.parameters
-        agent.add(`คุณสั่งชุด ${set}`);
+        // let {set} = req.body.queryResult.parameters
+        agent.add(`คุณสั่งชุด`);
     }
   
     // Run the proper function handler based on the matched Dialogflow intent name
