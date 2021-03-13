@@ -23,7 +23,7 @@ app.post('/webhook', (req, res) => {
     return res.status(200).send(req.method);
 })
 
-app.get('/fulfillment', (req, res) => {
+app.post('/fulfillment', (req, res) => {
     console.log('POST: /');
     console.log('Body: ',req.body);
   
