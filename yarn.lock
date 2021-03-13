@@ -89,7 +89,7 @@
     "mime-types" "~2.1.24"
     "negotiator" "0.6.2"
 
-"actions-on-google@^2.4.1":
+"actions-on-google@^2.4.1", "actions-on-google@^2.9.1":
   "integrity" "sha512-Nt6nkaAurayTWDbtvP4k++esQvGVmPOy5y2DsBmM2TXrjU/PW8ZBuDw4MDI2RyJE5gMLejbgGHToxx7SY/Gc5A=="
   "resolved" "https://registry.npmjs.org/actions-on-google/-/actions-on-google-2.13.0.tgz"
   "version" "2.13.0"
