@@ -28,174 +28,84 @@ function reply(reply_token) {
     let body = JSON.stringify({
         replyToken: reply_token,
         messages: [{
-            "type": "flex",
-            "altText": "Flex Message",
-            "contents": {
+            "type": "template",
+            "altText": "this is a carousel template",
+            "template": {
               "type": "carousel",
-              "contents": [
+              "imageSize": "cover",
+              "imageAspectRatio": "rectangle",
+              "columns": [
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png"
-                  },
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "Arm Chair, White",
-                        "wrap": true,
-                        "weight": "bold",
-                        "size": "xl"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "$49",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "xl"
-                          },
-                          {
-                            "type": "text",
-                            "text": ".99",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "sm"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "style": "primary",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to Cart",
-                          "uri": "https://linecorp.com"
-                        }
-                      },
-                      {
-                        "type": "button",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to wishlist",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
+                  "thumbnailImageUrl": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+                  "title": "ก๋วยเตี๋ยวเอ็นตุ๋นสมุนไพร",
+                  "text": "ุ69 บาท",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "สั่งซื้อสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    },
+                    {
+                      "type": "uri",
+                      "label": "รายละเอียดสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
                 },
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "size": "full",
-                    "aspectRatio": "20:13",
-                    "aspectMode": "cover",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png"
-                  },
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "Metal Desk Lamp",
-                        "wrap": true,
-                        "weight": "bold",
-                        "size": "xl"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "$11",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "xl"
-                          },
-                          {
-                            "type": "text",
-                            "text": ".99",
-                            "wrap": true,
-                            "weight": "bold",
-                            "size": "sm"
-                          }
-                        ]
-                      },
-                      {
-                        "type": "text",
-                        "text": "Temporarily out of stock",
-                        "wrap": true,
-                        "size": "xxs",
-                        "margin": "md",
-                        "color": "#ff5551"
-                      }
-                    ]
-                  },
-                  "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "style": "primary",
-                        "color": "#aaaaaa",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to Cart",
-                          "uri": "https://linecorp.com"
-                        }
-                      },
-                      {
-                        "type": "button",
-                        "action": {
-                          "type": "uri",
-                          "label": "Add to wish list",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
+                  "thumbnailImageUrl": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+                  "title": "ก๋วยเตี๋ยวหมูตุ๋นสมุนไพร",
+                  "text": "ุ69 บาท",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "สั่งซื้อสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    },
+                    {
+                      "type": "uri",
+                      "label": "รายละเอียดสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
                 },
                 {
-                  "type": "bubble",
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "button",
-                        "gravity": "center",
-                        "action": {
-                          "type": "uri",
-                          "label": "See more",
-                          "uri": "https://linecorp.com"
-                        }
-                      }
-                    ]
-                  }
+                  "thumbnailImageUrl": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+                  "title": "ก๋วยเตี๋ยวเป็ดตุ๋นสมุนไพร",
+                  "text": "ุ69 บาท",
+                  "actions": [
+                    {
+                      "type": "message",
+                      "label": "สั่งซื้อสินค้า",
+                      "text": "Action 1"
+                    },
+                    {
+                      "type": "message",
+                      "label": "รายละเอียดสินค้า",
+                      "text": "Action 2"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
+                },
+                {
+                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+                  "title": "ก๋วยเตี๋ยวไก่ตุ๋นสมุนไพร",
+                  "text": "ุ69 บาท",
+                  "actions": [
+                    {
+                      "type": "message",
+                      "label": "สั่งซื้อสินค้า",
+                      "text": "Action 1"
+                    },
+                    {
+                      "type": "message",
+                      "label": "รายละเอียดสินค้า",
+                      "text": "Action 2"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
                 }
               ]
             }
