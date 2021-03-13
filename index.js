@@ -5,6 +5,7 @@ const app = express()
 const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
 app.post('/webhook', (req, res) => {
     if (req.method === "POST") {
         let event = req.body.events[0]
@@ -297,14 +298,3 @@ const postToDialogflow = req => {
 };
 
 
-
-// let reply_token = req.body.events[0].replyToken
-// // res.status(403)
-
-// // try {
-// //     let reply_token = req.body.events[0].replyToken
-// // } catch (err) {
-// //     res.status(403)
-// // }
-// reply(reply_token)
-// res.sendStatus(200)
