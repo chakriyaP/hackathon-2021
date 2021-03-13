@@ -1,18 +1,3 @@
-// const express = require('express')
-// const app = express()
-// const PORT = process.env.PORT || 8080
-
-// app.get('/', (req, res) => res.send('Hello World'))
-// app.post('/webhook', (req, res) => res.sendStatus(200))
-
-
-
-
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port : ${PORT}`)
-// })
-
-// module.exports = app
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -42,12 +27,72 @@ function reply(reply_token) {
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: 'สวัสดีต่าาา'
+            text: 'สวัสดีค่าาา'
         },
         {
-            type: 'text',
-            text: 'แล้วไปละ'
-        }]
+            "type": "template",
+            "altText": "this is a carousel template",
+            "template": {
+              "type": "carousel",
+              "imageSize": "cover",
+              "imageAspectRatio": "rectangle",
+              "columns": [
+                {
+                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+                  "title": "Set 1",
+                  "text": "19,900 บาท",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "สั่งซื้อสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    },
+                    {
+                      "type": "uri",
+                      "label": "รายละเอียดเพิ่มเติม",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
+                },
+                {
+                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+                  "title": "Set 2",
+                  "text": "39,900 บาท",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "สั่งซื้อสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    },
+                    {
+                      "type": "uri",
+                      "label": "รายละเอียดเพิ่มเติม",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    }
+                  ],
+                  "imageBackgroundColor": "#FFFFFF"
+                },
+                {
+                  "thumbnailImageUrl": "PROVIDE_URL_FROM_YOUR_SERVER",
+                  "title": "Set 3",
+                  "text": "159,900 บาท",
+                  "actions": [
+                    {
+                      "type": "uri",
+                      "label": "สั่งซื้อสินค้า",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    },
+                    {
+                      "type": "uri",
+                      "label": "รายละเอียดเพิ่มเติม",
+                      "uri": "https://glacial-plateau-06583.herokuapp.com/"
+                    }
+                  ]
+                }
+              ]
+            }
+          }]
     })
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
