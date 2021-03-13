@@ -1,9 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-const {
-    WebhookClient
-  } = require('dialogflow-fulfillment');
+const {WebhookClient} = require('dialogflow-fulfillment');
 
 const app = express()
 const port = process.env.PORT || 4000
