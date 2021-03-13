@@ -6,16 +6,16 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
-    let reply_token = req.body.events[0].replyToken
-    // res.status(403)
-
-    // try {
-    //     let reply_token = req.body.events[0].replyToken
-    // } catch (err) {
-    //     res.status(403)
-    // }
-    reply(reply_token)
-    res.sendStatus(200)
+    if (req.method === "POST") {
+        let event = req.body.events[0]
+        if (event.type === "message" && event.message.type === "text") {
+          postToDialogflow(req);
+        } else {
+         let reply_token = req.body.events[0].replyToken
+          reply(reply_token);
+        }
+      }
+      return res.status(200).send(req.method);
 })
 
 app.listen(port)
@@ -286,3 +286,25 @@ function reply(reply_token) {
         console.log('status = ' + res.statusCode);
     });
 }
+
+const postToDialogflow = req => {
+  req.headers.host = "bots.dialogflow.com";
+  return request.post({
+    uri: "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/362d4e3b-583c-4eee-a1f2-36ea28a4f312",
+    headers: req.headers,
+    body: JSON.stringify(req.body)
+  });
+};
+
+
+
+// let reply_token = req.body.events[0].replyToken
+// // res.status(403)
+
+// // try {
+// //     let reply_token = req.body.events[0].replyToken
+// // } catch (err) {
+// //     res.status(403)
+// // }
+// reply(reply_token)
+// res.sendStatus(200)
