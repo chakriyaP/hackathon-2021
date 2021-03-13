@@ -19,6 +19,35 @@ app.post('/webhook', (req, res) => {
     return res.status(200).send(req.method);
 })
 
+app.post('/fulfillment', (req, res) => {
+    console.log('POST: /');
+    console.log('Body: ',req.body);
+  
+    //Create an instance
+    const agent = new WebhookClient({
+      request: req,
+      response: res
+    });
+  
+    //Test get value of WebhookClient
+    console.log('agentVersion: ' + agent.agentVersion);
+    console.log('intent: ' + agent.intent);
+    console.log('locale: ' + agent.locale);
+    console.log('query: ', agent.query);
+    console.log('session: ', agent.session);
+  
+    //Function Location
+    function informbilling(agent) {
+        let {set} = req.body.queryResult.parameters
+        agent.add(`คุณสั่งชุด ${set}`);
+    }
+  
+    // Run the proper function handler based on the matched Dialogflow intent name
+    let intentMap = new Map();
+    intentMap.set('framchise package - custom - yes', informbilling);  // "Location" is once Intent Name of Dialogflow Agent
+    agent.handleRequest(intentMap);
+  });
+
 app.listen(port)
 
 function reply(reply_token) {
